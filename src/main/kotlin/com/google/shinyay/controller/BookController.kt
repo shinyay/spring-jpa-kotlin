@@ -39,7 +39,7 @@ class BookController(val repository: BookRepository, val service: BookService) {
     }
 
     @PutMapping("/books")
-    fun updateBook(@RequestBody book: Book) {
-
+    fun updateBook(@RequestBody book: Book): ResponseEntity<Book> {
+        return ResponseEntity(service.updateBookInformation(book), HttpStatus.OK)
     }
 }
