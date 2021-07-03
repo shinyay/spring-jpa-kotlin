@@ -36,4 +36,8 @@ class BookController(val repository: BookRepository) {
     fun addNewBook(@RequestBody book: Book): ResponseEntity<Book> {
         return ResponseEntity(repository.save(book), HttpStatus.OK)
     }
+
+    @PutMapping("/books")
+    fun updateBook(@RequestBody book: Book) {
+    }
 }
