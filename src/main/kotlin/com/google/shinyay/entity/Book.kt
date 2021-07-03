@@ -10,8 +10,8 @@ data class Book(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long,
-    val name: String,
+    var name: String,
     val isbn: Long,
-    val category: String,
-    val price: Long
+    var category: String,
+    var price: Long
 )
