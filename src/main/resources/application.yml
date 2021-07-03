@@ -29,3 +29,8 @@ spring:
         dialect: org.hibernate.dialect.H2Dialect
         use_sql_comments: true
         format_sql: true
+springdoc:
+  api-docs:
+    path: /v3/books-api-docs
+  swagger-ui:
+    path: /books-api-doc
