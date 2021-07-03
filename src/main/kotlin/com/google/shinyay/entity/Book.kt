@@ -11,6 +11,7 @@ data class Book(
     @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long,
     val name: String,
+    val isbn: Long,
     val category: String,
     val price: Long
 )
