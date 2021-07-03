@@ -2,6 +2,7 @@ package com.google.shinyay.controller
 
 import com.google.shinyay.entity.Book
 import com.google.shinyay.repository.BookRepository
+import com.google.shinyay.service.BookService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -9,7 +10,7 @@ import java.util.*
 
 @RestController
 @RequestMapping("/api/v1")
-class BookController(val repository: BookRepository) {
+class BookController(val repository: BookRepository, val service: BookService) {
     
     @GetMapping
     fun info() = "Spring Data JPA with Kotlin and H2"
@@ -39,5 +40,6 @@ class BookController(val repository: BookRepository) {
 
     @PutMapping("/books")
     fun updateBook(@RequestBody book: Book) {
+
     }
 }
