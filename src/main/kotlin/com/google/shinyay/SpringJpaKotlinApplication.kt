@@ -2,6 +2,7 @@ package com.google.shinyay
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition
 import io.swagger.v3.oas.annotations.info.Info
+import io.swagger.v3.oas.annotations.info.License
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
@@ -10,7 +11,8 @@ import org.springframework.boot.runApplication
 	info = Info(
 		title = "Books API",
 		description = "Spring Data JPA + H2",
-		version = "v1"
+		version = "v1",
+		license = License(name = "MIT license", url = "https://bit.ly/2Tu1lFg" )
 	)
 )
 class SpringJpaKotlinApplication
