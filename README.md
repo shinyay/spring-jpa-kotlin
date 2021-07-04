@@ -16,6 +16,27 @@ This codes shows how to implement it by Kotlin.
 - `com.h2database:h2`
   - In Memory Database
 
+#### Kotlin Plugin
+Gradle Plugin
+```kotlin
+plugins {
+  kotlin("plugin.jpa") version "1.5.20"
+}
+```
+
+Maven Plugin
+```xml
+  <plugin>
+    <groupId>org.jetbrains.kotlin</groupId>
+    <artifactId>kotlin-maven-plugin</artifactId>
+    <configuration>
+      <compilerPlugins>
+        <plugin>jpa</plugin>
+      </compilerPlugins>
+    </configuration>
+  </plugin>
+```
+
 ## Demo
 ### API Document
 http://localhost:8080/books-api-doc
