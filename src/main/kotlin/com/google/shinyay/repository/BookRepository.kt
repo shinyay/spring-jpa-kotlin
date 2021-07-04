@@ -8,6 +8,6 @@ import java.util.*
 @Repository
 interface BookRepository : JpaRepository<Book, Long> {
     fun findBookByIsbn(isbn: Long): Optional<Book>
-    
-    fun deleteByIsbn(isbn: Long): Unit
+
+    fun deleteByIsbn(isbn: Long)
 }
