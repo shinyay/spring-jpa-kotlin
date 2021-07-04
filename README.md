@@ -44,10 +44,11 @@ spring:
   h2:
     console:
       enabled: true
-      path: /h2 # http://localhost:8080/h2-console
+      path: /h2 # http://localhost:8080/h2
       settings:
         trace: false
-        web-allow-others: false
+        web-allow-others: true # Whether to enable remote access
+        web-admin-password: passw0rd
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:testdb;database_to_upper=false;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
