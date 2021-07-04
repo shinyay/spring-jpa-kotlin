@@ -33,6 +33,15 @@ class BookController(val repository: BookRepository, val service: BookService) {
         return ResponseEntity(book, HttpStatus.OK)
     }
 
+    @GetMapping("/books/isbn/{isbn}")
+    fun findOneBookByIsbn(@PathVariable("isbn") isbn: Long): ResponseEntity<Optional<Book>> {
+        val book = repository.findBookByIsbn(isbn)
+        if (book.isEmpty) {
+            return ResponseEntity(HttpStatus.NOT_FOUND)
+        }
+        return ResponseEntity(book, HttpStatus.OK)
+    }
+
     @PostMapping("/books")
     fun addNewBook(@RequestBody book: Book): ResponseEntity<Book> {
         return ResponseEntity(repository.save(book), HttpStatus.OK)
