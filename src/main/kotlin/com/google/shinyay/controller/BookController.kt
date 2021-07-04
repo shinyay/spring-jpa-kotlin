@@ -52,4 +52,14 @@ class BookController(val repository: BookRepository, val service: BookService) {
         repository.deleteAll()
         return ResponseEntity(HttpStatus.OK)
     }
+
+    @DeleteMapping("/books/{isbn}")
+    fun deleteOneBookByIsbn(@PathVariable("isbn") isbn: Long): ResponseEntity<Void> {
+        val book = repository.findBookByIsbn(isbn)
+        if (book.isEmpty) {
+            return ResponseEntity(HttpStatus.NOT_FOUND)
+        }
+        repository.deleteByIsbn(isbn)
+        return ResponseEntity(HttpStatus.OK)
+    }
 }
