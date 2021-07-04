@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 class BookService(val repository: BookRepository) {
 
     fun updateBookInformation(book: Book): Book {
-        val persistedBook = repository.findBookByIsbn(book.isbn)
+        val persistedBook = repository.findBookByIsbn(book.isbn).get()
         persistedBook.name = book.name
         persistedBook.category = book.category
         persistedBook.price = book.price
