@@ -6,6 +6,13 @@ It eases development of applications that need to access JPA data sources.
 This codes shows how to implement it by Kotlin.
 
 ## Description
+### Dependencies
+- org.springframework.boot
+  - `spring-boot-starter-data-jpa`
+  - `spring-boot-starter-web`
+  - `spring-boot-devtools`
+- `org.springdoc:springdoc-openapi-ui:1.5.9`
+- `com.h2database:h2`
 
 ## Demo
 ### API Document
