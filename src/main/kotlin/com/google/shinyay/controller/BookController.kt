@@ -42,4 +42,14 @@ class BookController(val repository: BookRepository, val service: BookService) {
     fun updateBook(@RequestBody book: Book): ResponseEntity<Book> {
         return ResponseEntity(service.updateBookInformation(book), HttpStatus.OK)
     }
+
+    @DeleteMapping("/books")
+    fun deleteAllBooks(): ResponseEntity<Void> {
+        val books = repository.findAll()
+        if (books.isEmpty()) {
+            return ResponseEntity(HttpStatus.NO_CONTENT)
+        }
+        repository.deleteAll()
+        return ResponseEntity(HttpStatus.OK)
+    }
 }
