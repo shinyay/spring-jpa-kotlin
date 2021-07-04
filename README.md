@@ -64,7 +64,7 @@ spring:
     show-sql: true
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create-drop # create and drop the schema automatically when a session is starts and ends
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
