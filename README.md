@@ -1,6 +1,9 @@
-# Name
+# Spring Data JPA with H2 by Kotlin
 
-Overview
+Spring Data JPA provides repository support for the Java Persistence API (JPA).
+It eases development of applications that need to access JPA data sources.
+
+This codes shows how to implement it by Kotlin.
 
 ## Description
 
