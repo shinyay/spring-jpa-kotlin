@@ -100,17 +100,6 @@ data class Book(
 
 The `IDENTITY` strategy is supported by MySQL, SQL Server, PostgreSQL, DB2, Derby, and Sybase.
 
-UUID
-```kotlin
-@Id
-@GeneratedValue(generator="UUID")
-@GenericGenerator(
-    name="UUID",
-    strategy="org.hibernate.id.UUIDGenerator"
-)
-val id: Long
-```
-
 ## Demo
 ### API Document
 http://localhost:8080/books-api-doc
