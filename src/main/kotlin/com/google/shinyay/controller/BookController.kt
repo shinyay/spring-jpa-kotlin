@@ -68,7 +68,7 @@ class BookController(val repository: BookRepository, val service: BookService) {
         if (book.isEmpty) {
             return ResponseEntity(HttpStatus.NOT_FOUND)
         }
-        repository.deleteByIsbn(isbn)
+        repository.delete(book.get())
         return ResponseEntity(HttpStatus.OK)
     }
 }
