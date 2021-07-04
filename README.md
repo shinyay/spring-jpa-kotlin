@@ -37,6 +37,24 @@ Maven Plugin
   </plugin>
 ```
 
+### Application Configuration
+#### H2 Database
+```yaml
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        trace: false
+        web-allow-others: false
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;database_to_upper=false;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+```
+
 ## Demo
 ### API Document
 http://localhost:8080/books-api-doc
