@@ -72,6 +72,25 @@ spring:
         format_sql: true
 ```
 
+### Entity
+Put the following annotations:
+- @Entity
+- @Id
+- @GeneratedValue(strategy = GenerationType.AUTO)
+
+```kotlin
+@Entity
+data class Book(
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    val id: Long,
+    var name: String,
+    val isbn: Long,
+    var category: String,
+    var price: Long
+)
+```
+
 ## Demo
 ### API Document
 http://localhost:8080/books-api-doc
