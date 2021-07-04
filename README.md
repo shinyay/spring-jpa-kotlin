@@ -56,6 +56,22 @@ spring:
     password:
 ```
 
+#### JPA
+```yaml
+spring:
+  jpa:
+    database: h2
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        use_sql_comments: true
+        format_sql: true
+```
+
 ## Demo
 ### API Document
 http://localhost:8080/books-api-doc
