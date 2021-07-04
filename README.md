@@ -100,6 +100,18 @@ data class Book(
 
 The `IDENTITY` strategy is supported by MySQL, SQL Server, PostgreSQL, DB2, Derby, and Sybase.
 
+### Repository
+- `CrudRepository`: mainly provides CRUD functions.
+- `PagingAndSortingRepository`: provides methods to do pagination and sorting records.
+- `JpaRepository`: provides some JPA-related methods such as flushing the persistence context and deleting records in a batch.
+
+```kotlin
+@Repository
+interface BookRepository : JpaRepository<Book, Long> {
+    fun findBookByIsbn(isbn: Long): Optional<Book>
+}
+```
+
 ## Demo
 ### API Document
 http://localhost:8080/books-api-doc
