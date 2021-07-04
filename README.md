@@ -12,6 +12,7 @@ This codes shows how to implement it by Kotlin.
   - `spring-boot-starter-web`
   - `spring-boot-devtools`
 - `org.springdoc:springdoc-openapi-ui:1.5.9`
+- `org.springdoc:springdoc-openapi-kotlin:1.5.9`
   - For API Document
 - `com.h2database:h2`
   - In Memory Database
