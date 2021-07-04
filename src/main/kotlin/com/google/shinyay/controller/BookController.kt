@@ -3,19 +3,35 @@ package com.google.shinyay.controller
 import com.google.shinyay.entity.Book
 import com.google.shinyay.repository.BookRepository
 import com.google.shinyay.service.BookService
+import io.swagger.v3.oas.annotations.Operation
+import io.swagger.v3.oas.annotations.media.ArraySchema
+import io.swagger.v3.oas.annotations.media.Content
+import io.swagger.v3.oas.annotations.media.Schema
+import io.swagger.v3.oas.annotations.responses.ApiResponse
+import io.swagger.v3.oas.annotations.responses.ApiResponses
+import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.util.*
 
 @RestController
 @RequestMapping("/api/v1")
+@Tag(name = "Book", description = "Book API")
 class BookController(val repository: BookRepository, val service: BookService) {
     
     @GetMapping
     fun info() = "Spring Data JPA with Kotlin and H2"
 
     @GetMapping("/books")
+    @Operation(summary = "Find All Books", description = "Display all books which registered")
+    @ApiResponses( value = [
+        ApiResponse(responseCode = "200", description = "Found Books", content = [
+            Content(mediaType = MediaType.APPLICATION_JSON_VALUE.toString(), array = (ArraySchema(schema = Schema(implementation = Book::class))))
+        ]),
+        ApiResponse(responseCode = "204", description = "No Content", content = [Content(mediaType = MediaType.APPLICATION_JSON_VALUE.toString())])
+    ])
     fun findAllBooks(): ResponseEntity<MutableList<Book>> {
         val books = repository.findAll()
         if (books.isEmpty()) {
