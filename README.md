@@ -44,7 +44,7 @@ spring:
   h2:
     console:
       enabled: true
-      path: /h2
+      path: /h2 # http://localhost:8080/h2-console
       settings:
         trace: false
         web-allow-others: false
