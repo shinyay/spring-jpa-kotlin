@@ -91,6 +91,26 @@ data class Book(
 )
 ```
 
+|GenerationType|Description|
+|--------------|-----------|
+|GenerationType.IDENTITY|This strategy relies on the database auto-increment column|
+|GenerationType.SEQUENCE|JPA generates the primary key using a database sequence. We first need to create a sequence on the database.|
+|GenerationType.TABLE|This strategy generates the primary key from a table. We need to create a generator table on the database.|
+|GenerationType.AUTO|The JPA provider will choose an appropriate strategy for the underlying database|
+
+The `IDENTITY` strategy is supported by MySQL, SQL Server, PostgreSQL, DB2, Derby, and Sybase.
+
+UUID
+```kotlin
+@Id
+@GeneratedValue(generator="UUID")
+@GenericGenerator(
+    name="UUID",
+    strategy="org.hibernate.id.UUIDGenerator"
+)
+val id: Long
+```
+
 ## Demo
 ### API Document
 http://localhost:8080/books-api-doc
