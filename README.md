@@ -114,6 +114,13 @@ interface BookRepository : JpaRepository<Book, Long> {
 ```
 
 ## Demo
+### REST API Operation with curl
+#### POST
+```shell
+$ curl -X POST -H "Content-Type: application/json" -d '{"name":"Spring Tutorial","isbn":123456,"category":"technology","price":1000}' localhost:8080/api/v1/books
+```
+
+
 ### API Document
 http://localhost:8080/books-api-doc
 
