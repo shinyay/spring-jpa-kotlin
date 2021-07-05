@@ -1,0 +1,1 @@
+INSERT INTO book (name, isbn, category, price) VALUES ('Spring Tutorial', 12345, 'Technology', 1000)
