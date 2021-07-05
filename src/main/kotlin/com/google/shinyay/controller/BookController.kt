@@ -28,9 +28,9 @@ class BookController(val repository: BookRepository, val service: BookService) {
     @Operation(summary = "Find All Books", description = "Display all books which registered")
     @ApiResponses( value = [
         ApiResponse(responseCode = "200", description = "Found Books", content = [
-            Content(mediaType = MediaType.APPLICATION_JSON_VALUE.toString(), array = (ArraySchema(schema = Schema(implementation = Book::class))))
+            Content(mediaType = MediaType.APPLICATION_JSON_VALUE, array = (ArraySchema(schema = Schema(implementation = Book::class))))
         ]),
-        ApiResponse(responseCode = "204", description = "No Content", content = [Content(mediaType = MediaType.APPLICATION_JSON_VALUE.toString())])
+        ApiResponse(responseCode = "204", description = "No Content", content = [Content(mediaType = MediaType.APPLICATION_JSON_VALUE)])
     ])
     fun findAllBooks(): ResponseEntity<MutableList<Book>> {
         val books = repository.findAll()
