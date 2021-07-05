@@ -16,7 +16,7 @@ spring:
     init:
       platform: h2 # hsqldb oracle mysql postgresql
       encoding: utf-8
-      mode: embedded # always never
+      mode: embedded # always embedded never
       #schema-locations: classpath:schema.sql # schema-${platform}.sql
       #data-locations: classpath:data.sql # data-${platform}.sql
   jpa:
