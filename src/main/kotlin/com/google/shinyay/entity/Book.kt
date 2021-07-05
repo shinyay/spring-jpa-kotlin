@@ -10,7 +10,7 @@ import javax.persistence.Id
 @Schema(title = "Book Schema", description = "Book for JPA")
 data class Book(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(description = "Auto Generated ID")
     val id: Long,
     @Schema(description = "Book Name", example = "Spring Tutorial")
